@@ -16,4 +16,5 @@ object ThreadCreation extends App {
     // thread t completes is execution
     t.join()
     println("New Thread started/join")
+    println("Added to vs code...")
 }
