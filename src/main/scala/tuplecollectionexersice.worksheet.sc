@@ -126,7 +126,7 @@ may repeat), compute a Map[String, Int] showing the total counts
 
 val listOfFruitsCount=Seq(("apple", 2), ("pear", 3), ("apple", 5), ("lemon", 2), ("apple", 3))
 listOfFruitsCount.groupBy{
-  (a,b)=> a
+  case (a,b)=> a
 }.map {
   case( a-> b) => (a,b.map {
     case(x,y) => y
@@ -166,7 +166,7 @@ def paymentMadeByPerson[Person,Amount](elm:Seq[Map[Person,Amount]]) = {
   elm.flatMap{
     m => m.toSeq
   }.groupBy{
-    (a,b)=> a
+    case(a,b)=> a
   }.map {
     case h->l => (h, l.map{
       case (a,b)=>b
