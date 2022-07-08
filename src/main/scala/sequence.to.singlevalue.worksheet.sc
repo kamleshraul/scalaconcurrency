@@ -35,3 +35,17 @@ tailRecursion.lengthT((1 to 100000).toSeq,0)
 
 //tailrecursion uses accumulator argument, so that last recursive call occurs at the end position of function
 // if function is not tail recursive & @tailrec is used then application will not compile
+
+
+// tailrecursive
+object TailRecEx{
+    @tailrec def fromDigits(s:Seq[Int],res:Int=0):Int = {
+        //res is accumulator
+        if(s.isEmpty)
+            res
+        else 
+            fromDigits(s.tail,10*res+s.head)
+    }
+}
+
+TailRecEx.fromDigits(Seq(2,4,6,7))
